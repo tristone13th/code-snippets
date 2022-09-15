@@ -5,13 +5,13 @@ typedef struct _trampoline_data {
     void *parameters;
 } trampoline_data;
 
+// This is a trampoline in high level programming, for low level programming,
+// you can see in https://en.wikipedia.org/wiki/Trampoline_(computing)
 void trampoline(trampoline_data *data)
 {
     while (data->callback != NULL)
         data->callback(data);
 }
-
-//-----------------------------------------
 
 typedef struct _factorialParameters {
     int n;
